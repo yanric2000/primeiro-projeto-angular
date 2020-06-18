@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="container-child">
+        <h1> Plataformas cadastradas: </h1>
+        <div class="container-platforms">
+            <div *ngFor="let platform of platforms; index as i;" class="platform">
+                <p> Nome: {{ platform.name }} </p>
+                <p> Companhia: {{ platform.company }} </p>
+            </div>
+        </div>
+    </div>
+</div>

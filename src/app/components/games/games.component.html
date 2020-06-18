@@ -1,0 +1,67 @@
+<div class="container position-relative">
+    <form action="#" class="position-relative" id="main-form">
+        <a routerLink="/">
+            Voltar    
+        </a>
+        <h2> {{ gameName }} </h2>
+        <div class="row">
+            <div class="container-input">
+                <span> * Nome: </span>
+                <input type="text" (change)="onInputChange($event)" name="name" placeholder="Nome do jogo" value="{{ game.name }}">
+                <div class="border-bottom"></div>
+            </div>
+            <div class="container-input">
+                <span> * Estúdio: </span>
+                <input type="text" (change)="onInputChange($event)" name="studio" placeholder="Estúdio" value="{{ game.studio }}">
+                <div class="border-bottom"></div>
+            </div>
+        </div>
+        <h4> * Selecione as plataformas disponíveis. </h4>
+        <div class="row-plataform">
+            <div class="plataform" *ngFor="let platform of allPlatforms; index as i">
+                <input type="hidden" name="company" value="{{ platform.company }}">
+                <input
+                    type="checkbox"
+                    name="platform"
+                    id="{{ platform.id }}"
+                    value="{{ platform.name }}"
+                    [checked]="platform.available"
+                    (change)="onCheckboxChange(allPlatforms, $event)"
+                >
+                <label for="{{ platform.id }}" [class]="platform.available === true ? 'background active' : 'background'">
+                    <div class="container-svg" [innerHTML]="platformsLogo[i].safeSvg"></div>
+                </label>
+            </div>
+        </div>
+        <div class="container-buttons">
+            <button type="submit" class="submit-button" (click)="saveGame($event);">
+                Atualizar
+            </button>
+            <button type="button" class="cancel-button" (click)="openDeleteModal()">
+                Excluir
+            </button>
+        </div>
+        <div [class]="callbackClass">
+            <div [class]="loadingClass">
+                <div class="backdrop">
+                    <div class="spinner"></div>
+                    <div class="logo"> Carregando... </div>
+                  </div>
+            </div>
+            <div [class]="deleteModalClass">
+                <div class="warning">
+                    <p> <strong> Tem certeza que deseja excluir o jogo "{{ gameName }}"? </strong> </p>
+                </div>
+                <button (click)="deleteGame()" class="submit-button" type="submit">
+                    Sim
+                </button>
+                <button (click)="closeCallbackModal()" class="cancel-button" type="button">
+                    Não
+                </button>
+            </div>
+            <button [class]="callbackMessageClass" type="button" (click)="goHome()">
+                <p> {{ callbackResponse }} </p>
+            </button>
+        </div>
+    </form>
+</div>

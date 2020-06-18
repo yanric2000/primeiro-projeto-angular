@@ -1,0 +1,72 @@
+@import '../../../assets/styles/variables';
+
+header {
+    background-color: $fifthColorLighter;
+    padding: 24px 0;
+    margin-bottom: 60px;
+    width: 100%;
+    .navigation {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        width: 100%;
+        .item {
+            margin-right: 40px;
+            &:last-child { 
+                margin-right: 0;
+            }
+            a {
+                align-items: center;
+                border: 1px solid transparent;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                transition: all 0.21s ease-in-out;
+                padding: 8px;
+                &:hover {
+                    background-color: #FFF;
+                    border: 1px solid #fff;
+                    svg {
+                        fill: $thirdColor;
+                    }
+                }
+                svg {
+                    fill: $primaryColor;
+                    height: 40px;
+                    transition: all 0.2s ease-in-out;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    header {
+        margin-bottom: 40px;
+        .navigation {
+            .item {
+                a {
+                    svg {
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 568px) {
+    header {
+        margin-bottom: 24px;
+        .navigation {
+            .item {
+                a {
+                    svg {
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}

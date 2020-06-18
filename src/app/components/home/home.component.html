@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="container-child">
+        <h1> Todos os jogos </h1>
+        <div class="container-game">
+            <div *ngFor="let game of allGames; index as i;" class="game">
+                <a routerLink="/games/name/{{game.name}}">
+                    <h3> Id:  {{ game.id }} </h3>
+                    <p> Nome: {{ game.name }} </p>
+                    <p> Estúdio: {{ game.studio }} </p>
+                    <div class="container-platforms">
+                        <strong *ngFor="let platform of game.platformEnable" class="platform">
+                            {{ platform.name }}<span class="comma"> &#44; </span>
+                        </strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

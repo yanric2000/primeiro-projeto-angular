@@ -1,0 +1,342 @@
+@import './assets/styles/variables';
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-size: 2.1rem;
+}
+
+b, strong {
+    font-weight: 700 !important;
+}
+
+div, form {
+    max-width: 100vw;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: none !important;
+}
+
+input {
+    border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    background-color: transparent;
+    height: auto;
+    line-height: 1.1;
+    min-height: 100vh;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+audio, canvas, video {
+    display: inline-block;
+    zoom: 1;
+    max-width: 100%;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    background-color: $darkMedium;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    min-height: 100vh;
+}
+
+a:focus {
+    outline: none;
+}
+
+a:active, a:hover {
+    outline: none;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+figure {
+    margin: 0;
+}
+
+form {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid $primaryColorDarker;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type='button'], input[type='reset'], input[type='submit'] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+input[type='checkbox'], input[type='radio'] {
+    box-sizing: border-box;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+}
+
+input[type='search'] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html, button, input, select, textarea {
+    color: $primaryColor;
+}
+
+::-moz-selection {
+    background: $primaryColorDarker;
+    text-shadow: none;
+}
+
+::selection {
+    background: $primaryColorDarker;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    color: $primaryColor;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+svg {
+    height: auto;
+    width: auto;
+}
+
+/* End of Reset CSS */
+
+.main {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100% !important;
+    padding: 0 32px;
+    width: 1280px;
+    &.without-padding {
+        padding: 0;
+    }
+    .container-child {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.center {
+    align-items: center;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+button[type='button'].cancel-button {
+    background-color: $errorColor;
+    border: 2px solid $errorColor;
+    border-radius: 4px;
+    color: $primaryColor;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: $primaryColor;
+        border-color: $errorColor;
+        color: $errorColor;
+    }
+}
+
+button[type='submit'].submit-button {
+    background-color: $secondaryColorDarker;
+    border: 2px solid $secondaryColorDarker;
+    border-radius: 4px;
+    color: $primaryColor;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    transition: all 0.2s ease-in-out;
+    margin-right: 46px;
+    &:hover {
+        background-color: $primaryColor;
+        border-color: $secondaryColorDarker;
+        color: $secondaryColorDarker;
+    }
+}
+
+@media(max-width: 1024px) {
+    html {
+        font-size: 13px !important;
+    }
+    .container {
+        padding: 0 24px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width: 568px) {
+    .container {
+        padding: 0 16px;
+    }
+    h1 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 370px) {
+    button[type='button'].cancel-button,
+    button[type='submit'].submit-button {
+        margin: 0 auto;
+    }
+}
+

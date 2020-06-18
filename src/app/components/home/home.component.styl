@@ -1,0 +1,92 @@
+@import '../../../assets/styles/variables';
+
+.container {
+    border-radius: 4px;
+    .container-child {
+        background-color: $thirdColorDarker;
+        padding: 40px 20px 30px 20px;
+    }
+    h1 {
+        margin-bottom: 40px;
+        text-align: center;
+        width: 100%;
+    }
+    .container-game {
+        align-items: center;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: flex-start;
+        max-width: 100%;
+        width: 1056px;
+        .game {
+            background-color: $fourthColor;
+            border: 1px solid $primaryColorDarker;
+            border-radius: 4px;
+            height: 174px;
+            margin: 0 16px 24px 16px;
+            padding: 12px;
+            max-width: 100%;
+            transition: all 0.2s ease-in-out;
+            width: 320px;
+            &:hover {
+                background-color: $secondaryColor;
+                border-color: $secondaryColor;
+            }
+            h3 {
+                color: $primaryColor;
+                font-size: 1.2rem;
+            }
+            p {
+                color: $primaryColor;
+                font-size: 1rem;
+            }
+            .platform{
+                .comma {
+                    margin-left: -2px;
+                    font-size: 1rem;
+                }
+                &:last-child {
+                    .comma:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1180px) {
+    .container {
+        .container-game {
+            width: 704px;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .container {
+        .container-game {
+            .game {
+                h3 {
+                    font-size: 1.4rem;
+                }
+                p{
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 810px) {
+    .container {
+        .container-game {
+            justify-content: center;
+            width: 100%;
+            .game {
+                height: auto;
+                margin: 0 10px 16px 10px;
+            }
+        }
+    }
+}
